@@ -41,10 +41,12 @@ module.exports = function() {
     // Muestra cliente en especifico
     router.get('/productos/:idProducto', productosController.mostrarProducto)
 
-    // Actualizar Cliente
-    router.put('/productos/:idProducto', productosController.actualizarProducto)
+    // Actualizar Producto
+    router.put('/productos/:idProducto', 
+        productosController.subirArchivo,
+        productosController.actualizarProducto)
 
-    // Eliminar Cliente
+    // Eliminar Producto
     router.delete('/productos/:idProducto', productosController.eliminarProducto)
 
 
