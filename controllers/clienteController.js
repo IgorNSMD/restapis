@@ -48,3 +48,35 @@ exports.mostrarCliente = async (req,res, next) => {
     res.json(cliente);
 
 }
+
+// Actualiza su cliente por ID
+exports.actualizarCliente = async (req,res,next) => {
+
+    try {
+        const cliente = await Clientes.findOneAndUpdate({ _id:req.params.idCliente },
+            req.body, {
+                new: true
+            });
+        res.json(cliente)
+    } catch (error) {
+        // si hay un error
+        console.log(error)
+        next();        
+    }
+    
+}
+
+// Eliminar Cliente por su ID
+exports.eliminarCliente = async (req,res,next) => {
+    try {
+
+        await Clientes.findOneAndDelete({ _id:req.params.idCliente })
+        res.json({
+            mensaje:' Cliente Eliminado'
+        })
+    } catch (error) {
+        // si hay un error
+        console.log(error)
+        next();             
+    }
+}

@@ -7,7 +7,7 @@ module.exports = function() {
         res.send('inicio...')
     })
     
-    // Agrega nuevos clientes via POST
+    // Agrega nuevo cliente via POST
     router.post('/clientes', clienteController.nuevoCliente)
 
 
@@ -16,6 +16,12 @@ module.exports = function() {
 
     // Muestra cliente en especifico
     router.get('/clientes/:idCliente', clienteController.mostrarCliente)
+
+    // Actualizar Cliente
+    router.put('/clientes/:idCliente', clienteController.actualizarCliente)
+
+    // Eliminar Cliente
+    router.delete('/clientes/:idCliente', clienteController.eliminarCliente)
 
     return router;
 }
