@@ -29,7 +29,10 @@ module.exports = function() {
     /*** PRODUCTOS */
 
     // Agrega nuevo producto via POST
-    router.post('/productos', productosController.nuevoProducto)
+    router.post('/productos', 
+        productosController.subirArchivo,
+        productosController.nuevoProducto
+        )
 
 
     // Obtener metodo GET
