@@ -46,7 +46,7 @@ exports.nuevoProducto = async (req,res, next) => {
     try {
 
         if (req.file){
-            Producto.imagen = req.file
+            Producto.imagen = req.file.filename
         }
 
         // almacenar registro
