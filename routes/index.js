@@ -55,8 +55,9 @@ module.exports = function() {
         productosController.buscarProducto);
 
     /*** PEDIDOS */
+    
     // Agrega nuevos pedidos
-    router.post('/pedidos', 
+    router.post('/pedidos/nuevo/:idUsuario', 
         pedidosController.nuevoPedido);
 
     // mostrar todos los pedidos
