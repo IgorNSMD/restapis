@@ -14,7 +14,9 @@ module.exports = function() {
     })
     
     // Agrega nuevo cliente via POST
-    router.post('/clientes', clienteController.nuevoCliente)
+    router.post('/clientes', 
+
+        clienteController.nuevoCliente)
 
 
     // Obtener metodo GET
@@ -23,13 +25,16 @@ module.exports = function() {
         clienteController.mostrarClientes)
 
     // Muestra cliente en especifico
-    router.get('/clientes/:idCliente', clienteController.mostrarCliente)
+    router.get('/clientes/:idCliente', 
+        clienteController.mostrarCliente)
 
     // Actualizar Cliente
-    router.put('/clientes/:idCliente', clienteController.actualizarCliente)
+    router.put('/clientes/:idCliente', 
+        clienteController.actualizarCliente)
 
     // Eliminar Cliente
-    router.delete('/clientes/:idCliente', clienteController.eliminarCliente)
+    router.delete('/clientes/:idCliente', 
+        clienteController.eliminarCliente)
 
 
 
@@ -43,10 +48,13 @@ module.exports = function() {
 
 
     // Obtener metodo GET
-    router.get('/productos', productosController.mostrarProductos)
+    router.get('/productos', 
+        productosController.mostrarProductos)
 
     // Muestra cliente en especifico
-    router.get('/productos/:idProducto', productosController.mostrarProducto)
+    router.get('/productos/:idProducto', 
+    
+        productosController.mostrarProducto)
 
     // Actualizar Producto
     router.put('/productos/:idProducto', 
@@ -54,7 +62,8 @@ module.exports = function() {
         productosController.actualizarProducto)
 
     // Eliminar Producto
-    router.delete('/productos/:idProducto', productosController.eliminarProducto)
+    router.delete('/productos/:idProducto', 
+        productosController.eliminarProducto)
 
     // Busqueda de Productos
     router.post('/productos/busqueda/:query',
