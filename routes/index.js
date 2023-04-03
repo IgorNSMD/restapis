@@ -5,6 +5,9 @@ const productosController = require('../controllers/productosController')
 const pedidosController = require('../controllers/pedidosController');
 const usuariosController = require('../controllers/usuariosController');
 
+// middle para proteger las rutas
+const auth = require('../middleware/auth');
+
 module.exports = function() {
     router.get('/', (req,res) => {
         res.send('inicio...')
@@ -15,7 +18,9 @@ module.exports = function() {
 
 
     // Obtener metodo GET
-    router.get('/clientes', clienteController.mostrarClientes)
+    router.get('/clientes', 
+        auth,
+        clienteController.mostrarClientes)
 
     // Muestra cliente en especifico
     router.get('/clientes/:idCliente', clienteController.mostrarCliente)
